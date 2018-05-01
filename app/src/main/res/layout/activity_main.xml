@@ -6,13 +6,29 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/increase"
+        android:textSize="50sp"
+        android:gravity="center"
+        />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
         android:id="@+id/textview"
+        android:layout_below="@+id/increase"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textSize="100sp"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview"
+        android:id="@+id/show_toast"
+        android:onClick="showToast"
+        android:text="show"/>
 
 </RelativeLayout>

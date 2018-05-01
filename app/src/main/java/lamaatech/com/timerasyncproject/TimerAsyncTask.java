@@ -2,9 +2,7 @@ package lamaatech.com.timerasyncproject;
 
 import android.os.AsyncTask;
 
-import java.util.ArrayList;
-
-public class TimerAsyncTask extends AsyncTask<Void, Void, ArrayList<String>> {
+public class TimerAsyncTask extends AsyncTask<Integer, Void, Integer>{
 
     private IView iView;
 
@@ -13,26 +11,22 @@ public class TimerAsyncTask extends AsyncTask<Void, Void, ArrayList<String>> {
     }
 
     @Override
-    protected ArrayList<String> doInBackground(Void... num) {
+    protected Integer doInBackground(Integer... num) {
 
-        ArrayList<String> names = new ArrayList<>();
-
-
-        //get names
-        names.add("Osama");
-        names.add("bassam");
-        names.add("Ahmed");
-        names.add("MOhamed");
-
-        return names;
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return num[0];
     }
 
     @Override
-    protected void onPostExecute(ArrayList<String> names) {
+    protected void onPostExecute(Integer num) {
 
-        iView.updateUI(names);
+        iView.updateUI(num);
 
-        super.onPostExecute(names);
+        super.onPostExecute(num);
 
     }
 
